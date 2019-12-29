@@ -115,21 +115,21 @@
 		29C08ADE23B8BEFF00BF0019 /* AnotherMineSweeper */ = {
 			isa = PBXGroup;
 			children = (
-				29C08ADF23B8BEFF00BF0019 /* AppDelegate.swift */,
-				29C08AE123B8BEFF00BF0019 /* GameScene.sks */,
 				29C08AE323B8BEFF00BF0019 /* Actions.sks */,
+				29C08ADF23B8BEFF00BF0019 /* AppDelegate.swift */,
+				29C08AEC23B8BF0000BF0019 /* Assets.xcassets */,
+				29C08B1B23B8E44D00BF0019 /* Direction.swift */,
+				29C08B1D23B8E94100BF0019 /* Extentions.swift */,
+				29C08B1323B8C07C00BF0019 /* Game.swift */,
+				29C08B1523B8C0EB00BF0019 /* GameDifficulty.swift */,
+				29C08AE123B8BEFF00BF0019 /* GameScene.sks */,
 				29C08AE523B8BEFF00BF0019 /* GameScene.swift */,
 				29C08AE723B8BEFF00BF0019 /* GameViewController.swift */,
-				29C08AE923B8BEFF00BF0019 /* Main.storyboard */,
-				29C08AEC23B8BF0000BF0019 /* Assets.xcassets */,
-				29C08AEE23B8BF0000BF0019 /* LaunchScreen.storyboard */,
-				29C08AF123B8BF0000BF0019 /* Info.plist */,
-				29C08B1323B8C07C00BF0019 /* Game.swift */,
-				29C08B1D23B8E94100BF0019 /* Extentions.swift */,
-				29C08B1523B8C0EB00BF0019 /* GameDifficulty.swift */,
-				29C08B1723B8C3FD00BF0019 /* Tile.swift */,
 				29C08B1923B8C6A700BF0019 /* Grid.swift */,
-				29C08B1B23B8E44D00BF0019 /* Direction.swift */,
+				29C08AF123B8BF0000BF0019 /* Info.plist */,
+				29C08AEE23B8BF0000BF0019 /* LaunchScreen.storyboard */,
+				29C08AE923B8BEFF00BF0019 /* Main.storyboard */,
+				29C08B1723B8C3FD00BF0019 /* Tile.swift */,
 			);
 			path = AnotherMineSweeper;
 			sourceTree = "<group>";
