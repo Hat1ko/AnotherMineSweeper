@@ -63,7 +63,7 @@ enum GameDifficulty: CustomStringConvertible {
             return 1...80 ~= level ? .level(level) : .level(1)
         }
         set{
-            UserDefaults.standard.set(newValue.rawvalue, forKey: "level")
+            UserDefaults.standard.set(newValue.rawValue, forKey: "level")
         }
     }
 }
