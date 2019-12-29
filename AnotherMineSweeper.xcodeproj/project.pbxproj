@@ -17,6 +17,10 @@
 		29C08AF023B8BF0000BF0019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C08AEE23B8BF0000BF0019 /* LaunchScreen.storyboard */; };
 		29C08AFB23B8BF0000BF0019 /* AnotherMineSweeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08AFA23B8BF0000BF0019 /* AnotherMineSweeperTests.swift */; };
 		29C08B0623B8BF0000BF0019 /* AnotherMineSweeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08B0523B8BF0000BF0019 /* AnotherMineSweeperUITests.swift */; };
+		29C08B1423B8C07C00BF0019 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08B1323B8C07C00BF0019 /* Game.swift */; };
+		29C08B1623B8C0EB00BF0019 /* GameDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08B1523B8C0EB00BF0019 /* GameDifficulty.swift */; };
+		29C08B1823B8C3FD00BF0019 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08B1723B8C3FD00BF0019 /* Tile.swift */; };
+		29C08B1A23B8C6A700BF0019 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C08B1923B8C6A700BF0019 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		29C08B0123B8BF0000BF0019 /* AnotherMineSweeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnotherMineSweeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C08B0523B8BF0000BF0019 /* AnotherMineSweeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherMineSweeperUITests.swift; sourceTree = "<group>"; };
 		29C08B0723B8BF0000BF0019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C08B1323B8C07C00BF0019 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		29C08B1523B8C0EB00BF0019 /* GameDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDifficulty.swift; sourceTree = "<group>"; };
+		29C08B1723B8C3FD00BF0019 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		29C08B1923B8C6A700BF0019 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,10 @@
 				29C08AEC23B8BF0000BF0019 /* Assets.xcassets */,
 				29C08AEE23B8BF0000BF0019 /* LaunchScreen.storyboard */,
 				29C08AF123B8BF0000BF0019 /* Info.plist */,
+				29C08B1323B8C07C00BF0019 /* Game.swift */,
+				29C08B1523B8C0EB00BF0019 /* GameDifficulty.swift */,
+				29C08B1723B8C3FD00BF0019 /* Tile.swift */,
+				29C08B1923B8C6A700BF0019 /* Grid.swift */,
 			);
 			path = AnotherMineSweeper;
 			sourceTree = "<group>";
@@ -270,6 +282,10 @@
 				29C08AE623B8BEFF00BF0019 /* GameScene.swift in Sources */,
 				29C08AE823B8BEFF00BF0019 /* GameViewController.swift in Sources */,
 				29C08AE023B8BEFF00BF0019 /* AppDelegate.swift in Sources */,
+				29C08B1823B8C3FD00BF0019 /* Tile.swift in Sources */,
+				29C08B1423B8C07C00BF0019 /* Game.swift in Sources */,
+				29C08B1A23B8C6A700BF0019 /* Grid.swift in Sources */,
+				29C08B1623B8C0EB00BF0019 /* GameDifficulty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
