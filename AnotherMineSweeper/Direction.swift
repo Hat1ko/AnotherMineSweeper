@@ -17,7 +17,7 @@ enum Direction{
     var offset: Offset{
         switch self{
         case .top:
-            return Offset(0, -1)
+            return Offset(0, 1)
         case .topLeft:
             return Offset(-1, 1)
         case .left:

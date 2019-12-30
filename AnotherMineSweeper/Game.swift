@@ -56,7 +56,7 @@ class Game {
         }
     }
     
-    func addMines(around position: GridPosition) -> Void{
+    func addMines(around position: GridPosition) -> Void {
         while mines.count() < difficulty.mines {
             let row: Int = Int(arc4random_uniform(UInt32(difficulty.size.rows)))
             let column: Int = Int(arc4random_uniform(UInt32(difficulty.size.columns)))
@@ -66,7 +66,7 @@ class Game {
         }
     }
     
-    func play(at position: GridPosition) {
+    func play(at position: GridPosition) -> Void {
         if mines.count() == 0 {
             addMines(around: position)
         }
@@ -95,17 +95,50 @@ class Game {
         }
     }
     
+    //change method name
+    //number of bombs around
     func bombs(around position: GridPosition) -> Int {
-        return Direction.all.reduce(0 ,{ (partial, current) -> Int in
-            let neighbour = GridPosition(position.column + current.offset.column, position.row + current.offset.row)
-            
-            guard 0..<difficulty.size.columns ~= neighbour.column,
-                0..<difficulty.size.rows ~= neighbour.row
+        //reduce(initialResult, Direction(two cords))
+        return Direction.all.reduce(0 ,{ (result, current) -> Int in
+            let neighbourPos: GridPosition = GridPosition(position.column + current.offset.column, position.row + current.offset.row)
+
+            guard 0..<difficulty.size.columns ~= neighbourPos.column,  //equ neighbour.column <= difficulty.size.columns
+                0..<difficulty.size.rows ~= neighbourPos.row           //equ neighbour.row <= difficulty.size.rows
                 else {
-                    return partial
+                    return result
             }
-            return mines[neighbour] == nil ? partial : partial + 1
+            return mines[neighbourPos] == nil ? result : result + 1
         })
+        
+//        var bombsCount: Int = 0
+//
+//        Direction.all.forEach{
+//            direction in
+//
+//            bombsCount += { num -> Int in
+//
+//                let offset = direction.offset
+//                let pos: GridPosition = GridPosition(position.column + offset.column, position.row + offset.row)
+//
+//                if let _ = mines[pos] {
+//                    return 1
+//                }
+//                else {
+//                    return 0
+//                }
+//            }
+//
+//
+////            let offset = direction.offset
+////            let pos: GridPosition = GridPosition(position.column + offset.column, position.row + offset.row)
+////
+////            if let _ = mines[pos] {
+////                bombsCount += 1
+////            }
+//        }
+//        return bombsCount
+        
+//        return Direction.all.reduce(0, )
     }
     
     func revealTiles(from position: GridPosition) -> Void {
@@ -136,6 +169,4 @@ class Game {
             board[position] = Tile(.numbered(sourroundingBombs))
         }
     }
-    
-    
 }

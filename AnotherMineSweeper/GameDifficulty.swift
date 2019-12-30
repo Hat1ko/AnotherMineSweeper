@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: refactor
 enum GameDifficulty: CustomStringConvertible {
     case level(Int)
     

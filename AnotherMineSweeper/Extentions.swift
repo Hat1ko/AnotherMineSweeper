@@ -14,12 +14,16 @@ let phi: CGFloat = 1.618    //for color generation
 extension SKSpriteNode {
     //creating sprite for node
     static func tile(_ type: TileType, ofSize tileSize: CGFloat, colorTheme: ColorTheme) -> SKSpriteNode {
+        
         let nodeSize = CGSize(width: tileSize, height: tileSize)
         let tileNode = SKShapeNode(rectOf: nodeSize)
+        
         tileNode.strokeColor = .lightGray
         
         let detail = SKLabelNode(text: "\(type.description)")
-        detail.fontSize = tileSize*2/3
+        
+        detail.fontSize = tileSize * 2/3
+        
         if type != .bomb && type != .empty && type != .flagged && type != .unrevealed {
             detail.fontColor = colorTheme[type.hashValue]
         }

@@ -62,10 +62,15 @@ class GameScene: SKScene {
         guard let selectedPosition = selectedPosition,
             !game.isOver
             else {
-                return }
+                return
+        }
+        
         guard let tileType = game.board[selectedPosition]?.tileType,
             tileType == .flagged || tileType == .unrevealed
-            else { return }
+            else{
+                return
+        }
+        
         
         if sender.state == .began {
             label?.text = "🤔"
@@ -95,18 +100,24 @@ class GameScene: SKScene {
         newGame()
     }
     
-    func renderTiles() {
+    func renderTiles() -> Void {
         let oldBoard = tilesLayer.children
         var newBoard = [SKNode]()
         
         for row in 0..<rows {
             for column in 0..<columns {
                 guard let tileType = game.board[column, row]?.tileType
-                    else { continue }
+                    else {
+                        continue
+                }
+                
                 let node = SKSpriteNode.tile(tileType, ofSize: tileSize, colorTheme: colorTheme)
+                
                 node.position = pointFrom(position: (column: column, row: row))
-                node.name = "\(column), \(row), \(tileType.hashValue)" //😒
+                node.name = "\(column), \(row), \(tileType.hashValue)"
+                
                 newBoard.append(node)
+                
                 if !oldBoard.contains{ $0.name == node.name }, tileType != .flagged {
                     node.alpha = 0
                     let action = SKAction.fadeIn(withDuration: 0.5)
@@ -119,7 +130,8 @@ class GameScene: SKScene {
         newBoard.forEach{ tilesLayer.addChild($0) }
     }
     
-    func newGame() {
+    func newGame() -> Void {
+        
         tilesLayer.removeAllChildren()
         selectedPosition = nil
         colorTheme = UIColor.colorTheme(colors: Direction.all.count)
@@ -139,21 +151,23 @@ class GameScene: SKScene {
     
     func gridPosition(from point: CGPoint) -> GridPosition? {
         
-        if point.x >= 0 && point.x < CGFloat(columns)*tileSize &&
-            point.y >= 0 && point.y < CGFloat(rows)*tileSize {
+        if point.x >= 0 && point.x < CGFloat(columns) * tileSize &&
+            point.y >= 0 && point.y < CGFloat(rows) * tileSize {
             return (Int(point.x / tileSize), Int(point.y / tileSize))
         } else {
             return nil
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) -> Void{
+        
         let touch = touches.first!
         let location = touch.location(in: tilesLayer)
         
         let newGamePressed = (nodes(at: touch.location(in: self)).filter {
             $0.name == "label"
         }).count > 0
+        
         if newGamePressed {
             newGame()
             return
@@ -170,7 +184,9 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let selectedPosition = selectedPosition
-            else { return }
+            else {
+                return
+        }
         
         if !game.isOver {
             game.play(at: selectedPosition)
@@ -207,7 +223,7 @@ class GameScene: SKScene {
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        
-    }
+//    override func update(_ currentTime: TimeInterval) {
+//
+//    }
 }
