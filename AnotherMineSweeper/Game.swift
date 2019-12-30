@@ -87,7 +87,7 @@ class Game {
     }
     
     func toggleFlag(at position: GridPosition) -> Void {
-        //        let tileType = board[position]?.tileType
+        
         if let tileType = board[position]?.tileType, tileType == .flagged {
             board[position] = Tile(.unrevealed)
         } else {
@@ -108,7 +108,7 @@ class Game {
         })
     }
     
-    func revealTiles(from position: GridPosition) -> Void{
+    func revealTiles(from position: GridPosition) -> Void {
         guard let tileType = board[position]?.tileType,
             tileType == .unrevealed,
             mines[position] == nil
@@ -117,11 +117,12 @@ class Game {
         }
         
         let sourroundingBombs: Int = bombs(around: position)
+        
         if sourroundingBombs == 0 {
             board[position] = Tile(.empty)
             Direction.all.forEach {
                 direction in
-                let neighbour = GridPosition(position.column + direction.offset.column, position.row + direction.offset.column)
+                let neighbour = GridPosition(position.column + direction.offset.column, position.row + direction.offset.row)
                 
                 guard 0..<difficulty.size.columns ~= neighbour.column,
                     0..<difficulty.size.rows ~= neighbour.row

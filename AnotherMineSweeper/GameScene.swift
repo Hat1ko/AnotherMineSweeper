@@ -61,7 +61,8 @@ class GameScene: SKScene {
         
         guard let selectedPosition = selectedPosition,
             !game.isOver
-            else { return }
+            else {
+                return }
         guard let tileType = game.board[selectedPosition]?.tileType,
             tileType == .flagged || tileType == .unrevealed
             else { return }
@@ -152,7 +153,7 @@ class GameScene: SKScene {
         
         let newGamePressed = (nodes(at: touch.location(in: self)).filter {
             $0.name == "label"
-            }).count > 0
+        }).count > 0
         if newGamePressed {
             newGame()
             return
@@ -174,10 +175,10 @@ class GameScene: SKScene {
         if !game.isOver {
             game.play(at: selectedPosition)
             run(SKAction.sequence([
-                    SKAction.run {
-                        self.label?.text = "😮"
-                    }
-                ]))
+                SKAction.run {
+                    self.label?.text = "😮"
+                }
+            ]))
             
             renderTiles()
         }
@@ -188,7 +189,7 @@ class GameScene: SKScene {
                 SKAction.run {
                     self.label?.text = self.game.isWon ? "😎" : "☹️"
                 }
-                ]))
+            ]))
             
             
             if !game.isWon {
@@ -202,11 +203,11 @@ class GameScene: SKScene {
                 SKAction.run {
                     self.label?.text = "🙂"
                 }
-                ]))
+            ]))
         }
     }
     
     override func update(_ currentTime: TimeInterval) {
-
+        
     }
 }

@@ -31,7 +31,7 @@ enum Direction{
         case .right:
             return Offset(1, 0)
         case .topRight:
-            return Offset(1, 0)
+            return Offset(1, 1)
         }
     }
     
